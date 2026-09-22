@@ -127,8 +127,8 @@
     <string name="google_recorder_simulate_running">Simulate recording</string>
     <string name="google_recorder_simulate_paused">Simulate recording paused</string>
     <string name="google_recorder_simulate_clear">Clear Recorder status</string>
-    <string name="monitoring_google_recorder_running">Matches notifications with \"Currently recording\" and MM:SS or HH:MM:SS timestamps.</string>
-    <string name="monitoring_google_recorder_paused">Matches \"Recording paused\" and mirrors resume/save actions if available.</string>
+    <string name="monitoring_google_recorder_running">Matches notifications with Currently recording and MM:SS or HH:MM:SS timestamps.</string>
+    <string name="monitoring_google_recorder_paused">Matches Recording paused and mirrors resume/save actions if available.</string>
     <string name="monitoring_google_recorder_stopped">Clears when recording notification is removed or stopped.</string>
     <string name="google_recorder_live_metric_label">Duration</string>
     <string name="google_recorder_live_metric_label_en">Recording time</string>
@@ -167,7 +167,7 @@
     <string name="hevy_debug_open_payload">View notification payload</string>
     <string name="strava_card_app_name">Strava</string>
     <string name="strava_card_title">Activity Tracking</string>
-    <string name="strava_card_description">Mirrors Strava's official activity title, displaying activity type, elapsed time, and distance; updates for GPS wait, paused, and finished states.</string>
+    <string name="strava_card_description">Mirrors Strava official activity title, displaying activity type, elapsed time, and distance; updates for GPS wait, paused, and finished states.</string>
     <string name="strava_debug_open_payload">View Strava payload</string>
     <string name="strava_simulate_recording">Simulate recording</string>
     <string name="strava_simulate_paused">Simulate paused</string>
@@ -181,7 +181,7 @@
     <string name="hevy_simulate_rest">Simulate rest interval</string>
     <string name="hevy_simulate_finish">Simulate workout complete</string>
     <string name="monitoring_hevy_active_set">Displays current exercise name and set details directly.</string>
-    <string name="monitoring_hevy_rest">Displays next exercise, set counts, and a live \"Rest M:SS\" timer.</string>
+    <string name="monitoring_hevy_rest">Displays next exercise, set counts, and a live Rest timer.</string>
     <string name="monitoring_hevy_finished">Clears Live Update when Hevy workout notification is removed.</string>
     <string name="hevy_live_open_action">Open Hevy</string>
     <string name="uber_eats_open_action">Open Uber Eats</string>
@@ -224,7 +224,7 @@
     <string name="you_bike_region_other">Other Regions</string>
     <string name="action_cancel">Cancel</string>
     <string name="you_bike_exact_alarm_disabled_title">Fare Updates May Be Delayed</string>
-    <string name="you_bike_exact_alarm_disabled_description">Allowing Alarms &amp; Reminders permits precise rate updates during Doze mode.</string>
+    <string name="you_bike_exact_alarm_disabled_description">Allowing Alarms and Reminders permits precise rate updates during Doze mode.</string>
     <string name="you_bike_exact_alarm_allow_action">Allow Exact Alarms →</string>
     <string name="you_bike_simulate_near_boundary">Simulate entering next rate tier</string>
     <string name="you_bike_simulate_near_boundary_description">Debug test: sets rental time to 29m 50s ago to test exact alarms.</string>
@@ -251,15 +251,15 @@
     <string name="monitoring_taiwan_pay_alighting">Matches exit notifications.</string>
     <string name="taiwan_pay_debug_open_payload">View notification payload</string>
 
-    <string name="monitoring_foodpanda_on_the_way">Contains \"Courier on the way\".</string>
-    <string name="monitoring_foodpanda_arriving">Contains \"Courier arriving soon\".</string>
-    <string name="monitoring_foodpanda_ended">Contains \"Order delivered\" or \"Cancelled\".</string>
+    <string name="monitoring_foodpanda_on_the_way">Contains Courier on the way.</string>
+    <string name="monitoring_foodpanda_arriving">Contains Courier arriving soon.</string>
+    <string name="monitoring_foodpanda_ended">Contains Order delivered or Cancelled.</string>
 
-    <string name="monitoring_uber_pickup_en_route">Matches \"Pick up in [X] min\" and pickup location text.</string>
-    <string name="monitoring_uber_pickup_nearby">Matches \"Driver arriving soon\" or vehicle registration and PIN.</string>
-    <string name="monitoring_uber_arrived">Matches \"Driver has arrived\".</string>
+    <string name="monitoring_uber_pickup_en_route">Matches Pick up in min and pickup location text.</string>
+    <string name="monitoring_uber_pickup_nearby">Matches Driver arriving soon or vehicle registration and PIN.</string>
+    <string name="monitoring_uber_arrived">Matches Driver has arrived.</string>
     <string name="monitoring_uber_on_trip">Matches active trip updates and destination arrival times.</string>
-    <string name="monitoring_uber_ended">Matches \"Rate your trip\".</string>
+    <string name="monitoring_uber_ended">Matches Rate your trip.</string>
     <string name="monitoring_uber_taxi_pickup_en_route">Matches taxi driver en-route updates with estimated minutes.</string>
     <string name="monitoring_uber_taxi_pickup_approaching">Matches driver approaching notifications.</string>
     <string name="monitoring_uber_taxi_pickup_nearby">Matches driver nearby notices, extracting vehicle plate.</string>
@@ -277,5 +277,5 @@
     <string name="monitoring_taiwan_taxi_trip_ended">Clears status when ride is marked completed.</string>
     <string name="taiwan_taxi_debug_open_payload">View notification payload</string>
 
-    <string name="monitoring_uber_eats_received">Custom notification matches \"Order received\".</string>
+    <string name="monitoring_uber_eats_received">Custom notification matches Order received.</string>
 </resources>
