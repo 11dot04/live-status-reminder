@@ -408,7 +408,7 @@ class LiveStatusNotificationListenerService : NotificationListenerService() {
                     notificationTitle,
                     notificationContentText ?: notificationText,
                 )
-                if (otp != null) {
+                if (otp?.code != null) {
                     LiveStatusReminder.showOtp(this, otp.code, otp.sender)
                 }
             }
