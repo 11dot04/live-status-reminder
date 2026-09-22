@@ -13,6 +13,12 @@ object LiveStatusNotificationParser {
         RegexOption.IGNORE_CASE,
     )
 
+        // Matches 4 to 8 digit codes following keywords like OTP, code, verification, password, or pin
+    private val otpRegex = Regex(
+        """(?i)(?:code|otp|verification|password|pin|secret|passcode|one-time)\D{0,15}?(\b\d{4,8}\b)"""
+    )
+    private val standaloneCodeRegex = Regex("""\b\d{4,8}\b""")
+
     enum class RideEvent {
         NONE,
         ENTERED,
@@ -382,6 +388,31 @@ object LiveStatusNotificationParser {
             vehicle = vehicleDetails?.second,
             pin = exactPin(shortCriticalText) ?: separatedPin(notificationText),
         )
+    }
+
+        data class OtpUpdate(
+        val code: String?,
+        val sender: String? = null
+    )
+
+    @JvmStatic
+    fun parseOtp(title: String?, text: String?): OtpUpdate? {
+        val fullContent = "${title.orEmpty()} ${text.orEmpty()}"
+        if (fullContent.isBlank()) return null
+
+        // 1. Try finding a code paired with a security keyword
+        val matchedCode = otpRegex.find(fullContent)?.groupValues?.getOrNull(1)
+            ?: run {
+                // 2. Fallback: if message is short or contains "is your", check for standalone digits
+                if (fullContent.contains(Regex("""(?i)\b(is your|valid for|expires in)\b"""))) {
+                    standaloneCodeRegex.find(fullContent)?.value
+                } else null
+            }
+
+        return if (matchedCode != null) {
+            OtpUpdate(code = matchedCode, sender = title)
+        } else null
+  
     }
 
     @JvmStatic
