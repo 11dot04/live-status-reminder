@@ -48,6 +48,8 @@ object LiveStatusReminder {
     private const val TEAMS_CALL_NOTIFICATION_ID = 1015
     private const val STRAVA_RECORDING_NOTIFICATION_ID = 1016
     private const val CITYMAPPER_NOTIFICATION_ID = 1017
+    private const val OTP_NOTIFICATION_ID = 1018
+    private val otpDismissHandler by lazy { android.os.Handler(android.os.Looper.getMainLooper()) }
     private const val CITYMAPPER_CHANNEL_ID = "citymapper_navigation"
     private const val EXTRA_REQUEST_PROMOTED_ONGOING = "android.requestPromotedOngoing"
     private val uberEatsArrivalEstimate = Regex(
@@ -858,7 +860,56 @@ object LiveStatusReminder {
         notificationManager(context).cancel(STRAVA_RECORDING_NOTIFICATION_ID)
     }
 
+        @JvmStatic
+    fun showOtp(context: Context, code: String, sender: String? = null) {
+        createChannel(context)
+
+        otpDismissHandler.removeCallbacksAndMessages(null)
+
+        val clipboardIntent = PendingIntent.getActivity(
+            context,
+            18,
+            android.content.Intent(android.content.Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(android.content.Intent.EXTRA_TEXT, code)
+            },
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+        )
+
+        val builder = Notification.Builder(context, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentTitle("Verification Code: $code")
+            .setContentText(sender?.let { "From $it · Tap to share/copy" } ?: "Tap to share/copy")
+            .setContentIntent(clipboardIntent)
+            .setCategory(Notification.CATEGORY_STATUS)
+            .setOngoing(false)
+            .setOnlyAlertOnce(false)
+            .setVisibility(Notification.VISIBILITY_PUBLIC)
+            .setShortCriticalText("🔑 $code")
+            .addAction(
+                Notification.Action.Builder(
+                    Icon.createWithResource(context, R.drawable.ic_notification),
+                    "Copy $code",
+                    clipboardIntent,
+                ).build(),
+            )
+            .also(::requestPromotedOngoing)
+
+        notificationManager(context).notify(OTP_NOTIFICATION_ID, builder.build())
+
+        otpDismissHandler.postDelayed({
+            notificationManager(context).cancel(OTP_NOTIFICATION_ID)
+        }, 45_000L)
+    }
+
+    @JvmStatic
+    fun clearOtp(context: Context) {
+        otpDismissHandler.removeCallbacksAndMessages(null)
+        notificationManager(context).cancel(OTP_NOTIFICATION_ID)
+    }
+
     internal fun showDiscordVoice(context: Context, update: DiscordVoiceUpdate) {
+        
         createDiscordVoiceChannel(context)
         val openDiscord = update.contentIntent ?: PendingIntent.getActivity(
             context,
