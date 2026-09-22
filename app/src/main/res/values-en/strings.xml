@@ -215,4 +215,67 @@
     <string name="you_bike_region_hsinchu_science_park">Hsinchu Science Park</string>
     <string name="you_bike_region_miaoli">Miaoli County</string>
     <string name="you_bike_region_taichung">Taichung City</string>
-    <string name="you_bike_regio
+    <<string name="you_bike_region_chiayi_city">Chiayi City</string>
+    <string name="you_bike_region_chiayi_county">Chiayi County</string>
+    <string name="you_bike_region_tainan">Tainan City</string>
+    <string name="you_bike_region_kaohsiung">Kaohsiung City</string>
+    <string name="you_bike_region_pingtung">Pingtung County</string>
+    <string name="you_bike_region_taitung">Taitung County</string>
+    <string name="you_bike_region_other">Other Regions</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="you_bike_exact_alarm_disabled_title">Fare Updates May Be Delayed</string>
+    <string name="you_bike_exact_alarm_disabled_description">Allowing Alarms &amp; Reminders permits precise rate updates during Doze mode.</string>
+    <string name="you_bike_exact_alarm_allow_action">Allow Exact Alarms →</string>
+    <string name="you_bike_simulate_near_boundary">Simulate entering next rate tier</string>
+    <string name="you_bike_simulate_near_boundary_description">Debug test: sets rental time to 29m 50s ago to test exact alarms.</string>
+    <string name="you_bike_feedback_channel_name">Feedback</string>
+    <string name="you_bike_feedback_channel_description">Provides an optional feedback entry when station identification fails.</string>
+    <string name="you_bike_feedback_notification_title">Help Improve Station Detection</string>
+    <string name="you_bike_feedback_notification_description">Report the manually selected region for this ride</string>
+    <string name="you_bike_feedback_send_action">Send Report</string>
+    <string name="you_bike_feedback_chooser_title">Choose Email App</string>
+
+    <string name="monitoring_clock_running">Reads MetricStyle or countdown end timestamps from system timer notifications.</string>
+    <string name="monitoring_clock_paused">Freezes remaining countdown time when system timer is paused.</string>
+    <string name="monitoring_clock_ended">Clears when timer expires or is dismissed.</string>
+    <string name="clock_aod_update_warning_title">AOD Refresh Rate Notice</string>
+    <string name="clock_aod_update_warning_description">During Always-On Display (AOD) or deep sleep, per-second refreshes are paused; updates calibrate when the screen turns on.</string>
+    <string name="platform_special_status_warning_title">Exceptions Not Supported in Live Updates</string>
+    <string name="platform_special_status_warning_description">Unassigned drivers, item shortages, or unsupported ride stages will remain in the standard notification format.</string>
+
+    <string name="monitoring_ipass_entered">Notification contains transit card tap-in event.</string>
+    <string name="monitoring_ipass_exited">Notification contains completed transit exit transaction.</string>
+    <string name="taiwan_pay_simulate_boarding">Simulate boarding transit</string>
+    <string name="taiwan_pay_simulate_alighting">Simulate exiting transit</string>
+    <string name="monitoring_taiwan_pay_boarding">Matches boarding notifications.</string>
+    <string name="monitoring_taiwan_pay_alighting">Matches exit notifications.</string>
+    <string name="taiwan_pay_debug_open_payload">View notification payload</string>
+
+    <string name="monitoring_foodpanda_on_the_way">Contains \"Courier on the way\".</string>
+    <string name="monitoring_foodpanda_arriving">Contains \"Courier arriving soon\".</string>
+    <string name="monitoring_foodpanda_ended">Contains \"Order delivered\" or \"Cancelled\".</string>
+
+    <string name="monitoring_uber_pickup_en_route">Matches \"Pick up in [X] min\" and pickup location text.</string>
+    <string name="monitoring_uber_pickup_nearby">Matches \"Driver arriving soon\" or vehicle registration and PIN.</string>
+    <string name="monitoring_uber_arrived">Matches \"Driver has arrived\".</string>
+    <string name="monitoring_uber_on_trip">Matches active trip updates and destination arrival times.</string>
+    <string name="monitoring_uber_ended">Matches \"Rate your trip\".</string>
+    <string name="monitoring_uber_taxi_pickup_en_route">Matches taxi driver en-route updates with estimated minutes.</string>
+    <string name="monitoring_uber_taxi_pickup_approaching">Matches driver approaching notifications.</string>
+    <string name="monitoring_uber_taxi_pickup_nearby">Matches driver nearby notices, extracting vehicle plate.</string>
+    <string name="monitoring_uber_taxi_ended">Matches trip completed reviews.</string>
+
+    <string name="taiwan_taxi_app_name">55688</string>
+    <string name="taiwan_taxi_card_title">Ride Status</string>
+    <string name="taiwan_taxi_card_description">Displays vehicle license plate once assigned and updates when vehicle arrives.</string>
+    <string name="taiwan_taxi_language">Traditional Chinese</string>
+    <string name="taiwan_taxi_simulate_driver_found">Simulate driver assigned</string>
+    <string name="taiwan_taxi_simulate_vehicle_arrived">Simulate vehicle arrived</string>
+    <string name="taiwan_taxi_simulate_trip_ended">Simulate ride ended</string>
+    <string name="monitoring_taiwan_taxi_driver_found">Matches driver assigned alerts and parses vehicle plate.</string>
+    <string name="monitoring_taiwan_taxi_vehicle_arrived">Matches vehicle arrived notifications.</string>
+    <string name="monitoring_taiwan_taxi_trip_ended">Clears status when ride is marked completed.</string>
+    <string name="taiwan_taxi_debug_open_payload">View notification payload</string>
+
+    <string name="monitoring_uber_eats_received">Custom notification matches \"Order received\".</string>
+</resources>
