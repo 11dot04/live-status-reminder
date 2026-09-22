@@ -398,6 +398,20 @@ class LiveStatusNotificationListenerService : NotificationListenerService() {
                     LiveStatusReminder.clearHevyWorkout(this)
                 }
             }
+            GOOGLE_MESSAGES_PACKAGE,
+            REALME_MESSAGES_PACKAGE,
+            REALME_HEYTAP_PACKAGE,
+            WHATSAPP_PACKAGE -> {
+                val notificationTitle = readNotificationTitle(notification)
+                val notificationContentText = readNotificationContentText(notification)
+                val otp = LiveStatusNotificationParser.parseOtp(
+                    notificationTitle,
+                    notificationContentText ?: notificationText,
+                )
+                if (otp != null) {
+                    LiveStatusReminder.showOtp(this, otp.code, otp.sender)
+                }
+            }
         }
     }
 
@@ -1058,6 +1072,10 @@ class LiveStatusNotificationListenerService : NotificationListenerService() {
         private const val YPT_PACKAGE = YptStudyNotificationParser.PACKAGE_NAME
         private const val HEVY_PACKAGE = HevyWorkoutNotificationParser.PACKAGE_NAME
         private const val STRAVA_PACKAGE = "com.strava"
+        private const val GOOGLE_MESSAGES_PACKAGE = "com.google.android.apps.messaging"
+        private const val REALME_MESSAGES_PACKAGE = "com.coloros.mms"
+        private const val REALME_HEYTAP_PACKAGE = "com.heytap.mcs"
+        private const val WHATSAPP_PACKAGE = "com.whatsapp"
         private const val DISCORD_PACKAGE = DiscordVoiceNotificationParser.PACKAGE_NAME
         private const val TEAMS_PACKAGE = "com.microsoft.teams"
         private const val GOOGLE_RECORDER_PACKAGE = GoogleRecorderNotificationParser.PACKAGE_NAME
